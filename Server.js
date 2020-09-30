@@ -29,12 +29,20 @@ let Server = http.createServer((request, response) => {
   if (path === '/') {
     response.statusCode = 200;
     response.setHeader('Content-Type', 'text/html;charset=utf-8');
-    response.write('哈哈');
+    response.write(`
+    <!DOCTYPE html>
+    <head>
+    <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+    <h1>成功，标题变红！</h1>
+    </body>
+    `);
     response.end();
-  } else if (path === '/x') {
+  } else if (path === '/style.css') {
     response.statusCode = 200;
     response.setHeader('Content-Type', 'text/css;charset=utf-8');
-    response.write(`body{color:red;}`);
+    response.write(`body{color:red;}`)
     response.end();
   } else {
     response.statusCode = 404;
