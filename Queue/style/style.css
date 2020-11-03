@@ -1,0 +1,12 @@
+body {
+  font-family: sans-serif;
+}
+#screen {
+  border: 1px solid black;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
