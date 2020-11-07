@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="grandfather">
+      <div class="father">
+        <div class="son">content</div>
+      </div>
+    </div>
+    <script>
+      const grandfather = document.querySelector('.grandfather');
+      const father = document.querySelector('.father');
+      const son = document.querySelector('.son');
+      const fnYe = (event) => {};
+      const fnBa = (event) => {};
+      const fnEr = (event) => {};
+      grandfather.addEventListener('click', fnYe);
+      father.addEventListener('click', fnBa);
+      son.addEventListener('click', fnEr);
+    </script>
+  </body>
+</html>
