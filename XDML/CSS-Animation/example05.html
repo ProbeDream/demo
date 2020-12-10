@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>animation demo</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .heart {
+        display: inline-block;
+        margin: 100px;
+        position: relative;
+      }
+      .heart > .left {
+        border: 1px solid red;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        transform: rotate(45deg) translateX(31px);
+        /* 元素往上面靠 50px 往左边50px */
+        bottom: 50px;
+        left: -50px;
+        border-radius: 50% 0 0 50%;
+      }
+      .heart > .right {
+        border: 1px solid red;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        transform: rotate(45deg) translateY(31px);
+        bottom: 50px;
+        right: -50px;
+        border-radius: 50% 50% 0 0;
+      }
+      .heart > .bottom {
+        height: 50px;
+        width: 50px;
+        transform: rotate(45deg);
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="heart">
+      <div class="left"></div>
+      <div class="right"></div>
+      <div class="bottom"></div>
+    </div>
+  </body>
+</html>

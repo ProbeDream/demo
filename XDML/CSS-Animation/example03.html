@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .demo {
+        width: 100px;
+        height: 100px;
+        outline: 1px solid red;
+        transition: all 1s linear;
+      }
+      .demo.end {
+        transform: translateX(300px);
+      }
+      .other {
+        width: 100px;
+        height: 100px;
+        outline: 1px solid pink;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="demo"></div>
+      <other>1</other>
+      <other>2</other>
+    </div>
+    <script>
+      let demo = document.querySelector('.demo');
+      const TimeId = setTimeout(() => {
+        /* 因为删除元素节点的缘故导致重新布局 重新绘制 最后合成 */
+        demo.remove();
+      }, 3000);
+    </script>
+  </body>
+</html>

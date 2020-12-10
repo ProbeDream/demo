@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Animation</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .demo {
+        width: 100px;
+        height: 100px;
+        outline: 1px solid red;
+        position: relative;
+        left: 0;
+        top: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="demo"></div>
+    <script>
+      /* 
+      每过一段时间移动一段位置 
+      缺陷:性能上面的缺陷 paint flashing重新渲染
+      */
+      let demo = document.querySelector('.demo');
+      let n = 1;
+      let IntervalId = setInterval(() => {
+        if (n <= 100) {
+          demo.style.left = n + 'px';
+          n += 1;
+        } else {
+          clearInterval(IntervalId);
+        }
+      }, 100);
+    </script>
+  </body>
+</html>

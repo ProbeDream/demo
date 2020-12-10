@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .demo {
+        outline: 1px solid red;
+        width: 100px;
+        height: 100px;
+        transition: all 1s linear;
+      }
+      .demo.end {
+        transform: translateX(300px);
+      }
+      .other {
+        outline: 1px solid pink;
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="demo"></div>
+      <div class="other">1</div>
+      <div class="other">2</div>
+    </div>
+    <script>
+      let demo = document.querySelector('.demo');
+      const TimeId = setTimeout(() => {
+        demo.style.background = 'red';
+      }, 3000);
+    </script>
+  </body>
+</html>
