@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas id="canvas" width="100" height="100"></canvas>
+    <script>
+      let canvas = document.getElementById('canvas');
+      /* 
+        canvas的宽和高度都是文档元素的客户端宽高
+      */
+      canvas.width = document.documentElement.clientWidth;
+      canvas.height = document.documentElement.clientHeight;
+      /* 
+        上下文对象通过canvas对象获取
+      */
+      let context = canvas.getContext('2d');
+      /* 给定一个状态:画 默认为false*/
+      let painting = false;
+
+      context.fillStyle = 'black';
+      context.strokeStyle = 'none';
+      /* 当对应的canvas对象鼠标按下的时候 画的值为true */
+      canvas.onmousedown = () => {
+        painting = true;
+      };
+      /* canvas对象鼠标移动的时候触发的事件方法 */
+      canvas.onmousemove = (e) => {
+        if (painting === true) {
+          context.beginPath();
+          context.arc(e.clientX, e.clientY, 10, 0, 2 * Math.PI);
+          context.stroke();
+          context.fill();
+        } else {
+          console.log(`此时的Painting状态为false!`);
+        }
+      };
+      /* canvas对象鼠标弹起的时候触发的事件方法 */
+      canvas.onmouseup = () => {
+        painting = false;
+      };
+    </script>
+  </body>
+</html>
