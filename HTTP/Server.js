@@ -1,7 +1,5 @@
 let http = require('http');
 let url = require('url');
-let fs = require('fs');
-const { log } = require('console');
 let port = process.argv[2];
 
 if (!port) {
