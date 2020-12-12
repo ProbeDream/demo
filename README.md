@@ -1,7 +1,7 @@
 ### 01|Demo仓库
 1. [小画板v1](https://probedream.github.io/demo/index.html)
 2. [小画板v2](https://probedream.github.io/demo/demo03.html)
-3. [会动的代码](https://probedream.github.io/demo/taiji/index.html)
+3. [会动的代码](https://probedream.github.io/demo/taiji/)
 4. [点餐demo](https://probedream.github.io/demo/Queue/index.html)
 5. [DOM封装库](https://github.com/ProbeDream/demo/tree/master/DOM)
 6. [jQuery设计模式上](https://github.com/ProbeDream/demo/tree/master/jQuery) 
