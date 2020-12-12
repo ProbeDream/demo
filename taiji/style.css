@@ -1,0 +1,44 @@
+/*样式重置*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::before, *::after {
+    box-sizing: border-box;
+}
+/*固定定位*/
+#div1{
+    position: fixed;
+    left: 50%;
+    transform:translateX(-50%);
+    top: 20px;
+}
+
+#div1::before, #div1::after {
+    content: '';
+    display: block;
+    position: absolute;
+}
+
+/*媒体查询 用于适配移动端*/
+@media (max-width: 500px) {
+    /*  内容呈现高度为视口包含块的50%
+        超出部分自动显示
+    */
+    #html {
+        height: 50vh;
+        overflow: auto;
+    }
+    /*内容包裹高度为包含块的50%*/
+    #divWrapper {
+        height: 50vh;
+    }
+
+    #div1 {
+        position: relative;
+        top: 0;
+        right: 0;
+    }
+}
