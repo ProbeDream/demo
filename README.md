@@ -6,3 +6,4 @@
 5. [DOM封装库](https://github.com/ProbeDream/demo/tree/master/DOM)
 6. [jQuery设计模式上](https://github.com/ProbeDream/demo/tree/master/jQuery) 
     1. [预览地址](https://probedream.github.io/demo/jQuery/index.html)
+7. [Ajax学习](https://github.com/ProbeDream/demo/tree/master/Ajax)
