@@ -2,29 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
-    <style>
-      /* 
-            设置字体的样式
-        */
-      .icon {
-        width: 1em;
-        height: 1em;
-        vertical-align: -0.15em;
-        fill: currentColor;
-        overflow: hidden;
-      }
-    </style>
+    <!-- 防止用户点击缩放 -->
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"
+    />
+    <title>navigation</title>
+    <link rel="stylesheet" href="./style.css">
   </head>
   <body>
+    <!-- header部分 -->
     <header class="globalHeader">
       <form class="searchForm" method="get" action="https://www.baidu.com/s">
-        <input name="wd" type="text" />
+        <input type="text" name="word" />
         <button type="submit">搜索</button>
       </form>
     </header>
+    <!-- 内容主体部分 -->
     <main class="globalMain">
       <ul class="siteList">
         <li class="last">
@@ -39,7 +33,8 @@
         </li>
       </ul>
     </main>
-    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-    <script src="main.js"></script>
+    <script src="//at.alicdn.com/t/font_1473630_8pfq4zss4o8.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./main.js"></script>
   </body>
 </html>
