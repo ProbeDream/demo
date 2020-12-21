@@ -160,6 +160,7 @@ body {
     align-items: center;
     flex-direction: column;
     padding: 20px 0;
+    border-radius: 4px;
 }
 
 .siteList .addButton .icon {
