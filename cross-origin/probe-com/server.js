@@ -12,13 +12,20 @@ const server = http.createServer((request, response) => {
   let parseURL = url.parse(request.url, true);
   let pathWidthQuery = request.url;
   let queryString = '';
-  if (pathWidthQuery.indexOf('?' >= 0)) {
+  if (pathWidthQuery.indexOf('?') >= 0) {
     queryString = pathWidthQuery.substring(pathWidthQuery.indexOf('?'));
   }
   let path = parseURL.pathname;
   let query = parseURL.query;
   let method = parseURL.method;
 
+  console.log(`有个人发送请求过来了:${pathWidthQuery}`);
+  /* 
+    定义了三个路由:
+    /index.html
+    /probe.js
+    /xxx 
+  */
   if (path === '/index.html') {
     response.statusCode = 200;
     response.setHeader('Content-Type', 'text/html;charset=utf-8');
