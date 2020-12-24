@@ -1,3 +1,4 @@
+/* 封装了一个普通的ajax请求 请求/friends.json路由 */
 const XHR = new XMLHttpRequest();
 XHR.open('GET', '/friends.json');
 XHR.onreadystatechange = () => {
