@@ -17,7 +17,8 @@ cd bb-com && node-dev server.js
 
 - 进入到`probe-com`文件夹运行`server.js`
 ```bash
-cd probe-com && node-dev server.js
+cd probe-com && node-dev server.js 8888
+cd bb-com && node-dev server.js 9999
 ```
 设值对应的映射:
 ```
