@@ -8,3 +8,4 @@
     1. [预览地址](https://probedream.github.io/demo/jQuery/index.html)
 7. [Ajax学习](https://github.com/ProbeDream/demo/tree/master/Ajax)
 8. [navigation site](https://probedream.github.io/demo/navigationSite/index.html)
+9. [cross-origin](https://github.com/ProbeDream/demo/tree/master/cross-origin)
