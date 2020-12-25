@@ -9,3 +9,4 @@
 7. [Ajax学习](https://github.com/ProbeDream/demo/tree/master/Ajax)
 8. [navigation site](https://probedream.github.io/demo/navigationSite/index.html)
 9. [cross-origin](https://github.com/ProbeDream/demo/tree/master/cross-origin)
+10. [static-server](https://github.com/ProbeDream/demo/tree/master/static-server)
