@@ -10,13 +10,13 @@ if (!port) {
 
 const server = http.createServer((request, response) => {
   let parseURL = url.parse(request.url, true);
-  let pathWidthQuery = request.url;
+  let pathWithQuery = request.url;
   let queryString = '';
-  if (pathWidthQuery.indexOf('?') >= 0) {
-    queryString = pathWidthQuery.substring(pathWidthQuery.indexOf('?'));
+  if (pathWithQuery.indexOf('?') >= 0) {
+    queryString = pathWithQuery.substring(pathWithQuery.indexOf('?'));
   }
   let { pathname, query } = parseURL;
-  console.log(`有人来请求了:${pathWidthQuery}`);
+  console.log(`有人来请求了:${pathWithQuery}`);
   if (pathname === '/index.html') {
     response.statusCode = 200;
     response.setHeader('Content-Type', 'text/html;charset=utf-8');
