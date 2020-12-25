@@ -10,14 +10,14 @@ if (!port) {
 
 const server = http.createServer((request, response) => {
   let parseURL = url.parse(request.url, true);
-  let pathWidthQuery = request.url;
+  let pathWithQuery = request.url;
   let queryString = '';
-  if (pathWidthQuery.indexOf('?') >= 0) {
-    queryString = pathWidthQuery.substring(pathWidthQuery.indexOf('?'));
+  if (pathWithQuery.indexOf('?') >= 0) {
+    queryString = pathWithQuery.substring(pathWithQuery.indexOf('?'));
   }
   let { pathname, query } = parseURL;
   console.dir(`parseURL:${parseURL}`);
-  console.log(`有个人发送请求过来了:${pathWidthQuery}`);
+  console.log(`有个人发送请求过来了:${pathWithQuery}`);
   /* 
     定义了三个路由:
     /index.html
