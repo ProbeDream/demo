@@ -1,7 +1,7 @@
 let http = require('http');
 let fs = require('fs');
 let url = require('url');
-let port = process.arg[2];
+let port = process.argv[2];
 if (!port) {
   console.log(`请您指定对应的端口哪怕是 node-dev server.js 8080 也可以的`);
   process.exit(1);
@@ -16,8 +16,12 @@ const server = http.createServer((request, response) => {
   }
   let { pathname, query } = parseURL;
   let { method } = request;
+  console.log(`来请求了:${pathWithQuery}`);
+  response.statusCode = 200;
+  console.log(`你访问的pathname:${pathname}`);
   /* 文件路径根据路径名判断 如果说为/ 那么文件路径为"/index.html" 否则为路径名 */
   const filePath = pathname === '/' ? '/index.html' : pathname;
+  console.log(`此时的filepath:${filePath}`);
   const index = filePath.lastIndexOf('.');
   const suffix = filePath.substring(index);
   /* 定义一个文件类型 */
@@ -37,7 +41,7 @@ const server = http.createServer((request, response) => {
   );
   let content;
   try {
-    content = fs.readFileSync(`./public/${filepath}`);
+    content = fs.readFileSync(`./public${filePath}`);
   } catch (error) {
     content = '文件不存在';
     response.statusCode = 404;
