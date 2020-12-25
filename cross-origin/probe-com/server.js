@@ -15,10 +15,8 @@ const server = http.createServer((request, response) => {
   if (pathWidthQuery.indexOf('?') >= 0) {
     queryString = pathWidthQuery.substring(pathWidthQuery.indexOf('?'));
   }
-  let path = parseURL.pathname;
-  let query = parseURL.query;
-  let method = parseURL.method;
-
+  let { pathname, query } = parseURL;
+  console.dir(`parseURL:${parseURL}`);
   console.log(`有个人发送请求过来了:${pathWidthQuery}`);
   /* 
     定义了三个路由:
@@ -26,12 +24,12 @@ const server = http.createServer((request, response) => {
     /probe.js
     /xxx 
   */
-  if (path === '/index.html') {
+  if (pathname === '/index.html') {
     response.statusCode = 200;
     response.setHeader('Content-Type', 'text/html;charset=utf-8');
     response.write(fs.readFileSync('./public/index.html'));
     response.end();
-  } else if (path === '/probe.js') {
+  } else if (pathname === '/probe.js') {
     response.statusCode = 200;
     response.setHeader('Content-Type', 'text/javascript;charset=utf-8');
     response.write(fs.readFileSync('./public/probe.js'));

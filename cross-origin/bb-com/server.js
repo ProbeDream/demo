@@ -15,23 +15,28 @@ const server = http.createServer((request, response) => {
   if (pathWidthQuery.indexOf('?') >= 0) {
     queryString = pathWidthQuery.substring(pathWidthQuery.indexOf('?'));
   }
-  let path = parseURL.pathname;
-  let query = parseURL.query;
-  let method = parseURL.method;
+  let { pathname, query } = parseURL;
   console.log(`有人来请求了:${pathWidthQuery}`);
-  if (path === '/index.html') {
+  if (pathname === '/index.html') {
     response.statusCode = 200;
     response.setHeader('Content-Type', 'text/html;charset=utf-8');
     response.write(fs.readFileSync('./public/index.html'));
     response.end();
-  } else if (path === '/bb.js') {
+  } else if (pathname === '/bb.js') {
     response.statusCode = 200;
     response.setHeader('Content-Type', 'text/javascript;charset=utf-8');
     response.write(fs.readFileSync('./public/bb.js'));
     response.end();
-  } else if (path === '/friends.js') {
+  } else if (pathname === '/friends.json') {
+    response.statusCode = 200;
+    response.setHeader('Content-Type', 'application/json;charset=utf-8');
+    /* 指定对应的URL可以跨域 */
+    response.setHeader('Access-Control-Allow-Origin', 'http://probe.com:9990');
+    response.write(fs.readFileSync('./public/friends.json'));
+    response.end();
+  } else if (pathname === '/friends.js') {
     /* 当前的请求以http:probe.com:9999开头的 */
-    if (request.headers['referer'].indexOf('http://probe.com:9999') === 0) {
+    if (request.headers['referer'].indexOf('http://probe.com:9990') === 0) {
       response.statusCode = 200;
       response.setHeader('Content-Type', 'text/javascript;charset=utf-8');
       /* 定义一个字符串 */
@@ -48,13 +53,6 @@ const server = http.createServer((request, response) => {
       response.statusCode = 404;
       response.end();
     }
-  } else if (path === '/friends.json') {
-    response.statusCode = 200;
-    response.setHeader('Content-Type', 'application/json;charset=utf-8');
-    /* 指定对应的URL可以跨域 */
-    response.setHeader('Access-Control-Allow-Origin', 'http://probe.com:9999');
-    response.write(fs.readFileSync('./public/friends.json'));
-    response.end();
   } else {
     response.statusCode = 400;
     response.setHeader('Content-Type', 'text/html;charset=utf-8');
