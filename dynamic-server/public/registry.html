@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>registry</title>
+  </head>
+  <body>
+    <form action="" id="registryForm">
+      <div>
+        <label for=""
+          >用户名
+          <input type="text" name="name" id="" />
+        </label>
+      </div>
+      <div>
+        <label for=""
+          >密码
+          <input type="password" name="password" id="" />
+        </label>
+      </div>
+      <div><button type="submit">注册</button></div>
+    </form>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      /* 
+        编写一个注册页面
+        引入jQuery
+        拿到对应的表单对象之后
+        监听对应的submit事件,提交事件执行之后
+        拿到对应的name和password值并且组装为一个对象
+        通过jQuery自带的Ajax实现通过POST提交到/registry路由
+        并且通过返回Promise的方式对执行结果做回调操作
+      */
+      const $form = $('#registryForm');
+      $form.on('submit', (e) => {
+        e.preventDefault();
+        const name = $form.find('input[name=name]').val();
+        const password = $form.find('input[name=password]').val();
+        $.ajax({
+          method: 'POST',
+          url: '/register',
+          contentType: 'text/json;charset=UTF-8',
+        }).then(
+          () => {
+            alert('注册成功');
+            location.href = '/sign_in.html';
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
+      });
+    </script>
+  </body>
+</html>
