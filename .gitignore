@@ -3,3 +3,6 @@ nav1/.cache/
 nav1/dist/
 nav1/node_modules/
 temp/
+mvc-demo/node_modules/
+mvc-demo/.cache/
+mvc-demo/.vscode/
