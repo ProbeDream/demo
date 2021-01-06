@@ -1,0 +1,25 @@
+{
+  "name": "mvc-demo-3",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "jquery": "3.5.1",
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {
+    "@babel/core": "7.2.0",
+    "parcel-bundler": "^1.6.1"
+  },
+  "alias": {
+    "vue": "./node_modules/vue/dist/vue.common.js"
+  },
+  "keywords": [
+    "javascript",
+    "starter"
+  ],"runtimeCompiler":true
+}
