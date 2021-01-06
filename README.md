@@ -12,3 +12,4 @@
 10. [static-server](https://github.com/ProbeDream/demo/tree/master/static-server)
 11. [MVC-Demo](https://probedream.github.io/demo/mvc-demo/dist/index.html)
 12. [MVC-Demo-2](https://probedream.github.io/demo/mvc-demo-2/dist/index.html)
+12. [MVC-Demo-3](https://probedream.github.io/demo/mvc-demo-3/dist/index.html)
