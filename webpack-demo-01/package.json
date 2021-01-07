@@ -13,7 +13,7 @@
     "webpack-dev-server": "^3.9.0"
   },
   "scripts": {
-    "build": "rm -rf dist && npx webpack",
+    "build": "rm -rf dist && npx webpack --config webpack.config.prod.js",
     "start": "npx webpack-dev-server --open"
   }
 }
