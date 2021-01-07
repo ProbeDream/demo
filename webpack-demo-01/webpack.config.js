@@ -1,6 +1,5 @@
-let path = require('path');
-let htmlWebpackPlugin = require('html-webpack-plugin');
-let miniCssExtractPlugin = require('mini-css-extract-plugin');
+const htmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 module.exports = {
   mode: 'development',
   entry: './src/index.js',
@@ -12,10 +11,6 @@ module.exports = {
     new htmlWebpackPlugin({
       title: 'probedream',
       template: './src/assets/template.html',
-    }),
-    new miniCssExtractPlugin({
-      filename: '[name].[contenthash].css',
-      chunkFilename: '[id].[contenthash].css',
     }),
   ],
   module: {
