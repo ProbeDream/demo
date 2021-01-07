@@ -4,9 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
+    "html-webpack-plugin": "^4.5.1",
     "webpack": "4",
     "webpack-cli": "4"
-  },"scripts":{
-    "build":"rm -rf dist && npx webpack"
+  },
+  "scripts": {
+    "build": "rm -rf dist && npx webpack"
   }
 }
