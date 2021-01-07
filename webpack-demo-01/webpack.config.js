@@ -7,8 +7,18 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: `[name].[contenthash].js`,
   },
-  plugins: [new htmlWebpackPlugin({
-    title:"probedream",
-    template:"./src/assets/template.html"
-  })],
+  plugins: [
+    new htmlWebpackPlugin({
+      title: 'probedream',
+      template: './src/assets/template.html',
+    }),
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader','css-loader'],
+      },
+    ],
+  },
 };
