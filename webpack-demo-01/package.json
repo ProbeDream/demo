@@ -1,0 +1,12 @@
+{
+  "name": "webpack-demo-01",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "4",
+    "webpack-cli": "4"
+  },"scripts":{
+    "build":"rm -rf dist && npx webpack"
+  }
+}
