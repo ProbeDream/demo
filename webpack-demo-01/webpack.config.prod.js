@@ -1,19 +1,13 @@
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const miniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
+const base = require('./webpack.config.base.js');
 
 module.exports = {
   mode: 'production',
-  entry: './src/index.js',
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[contenthash].js',
-  },
+  ...base,
   plugins: [
-    new htmlWebpackPlugin({
-      title: 'probedream',
-      template: './src/assets/template.html',
-    }),
+    ...base.plugins,
     new miniCssExtractPlugin({
       filename: `[name].[contenthash].css`,
       chunkFilename: '[id].[contenthash].css',
