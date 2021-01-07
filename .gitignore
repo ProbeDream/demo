@@ -13,3 +13,5 @@ mvc-demo-3/.cache/
 .vscode/
 webpack-demo-01/node_modules/
 webpack-demo-01/.cache/
+webpack-demo-01/yarn-error.log
+webpack-demo-01/dist
