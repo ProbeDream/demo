@@ -11,8 +11,11 @@ const useUpdate = (fn, dep) => {
     if (count > 1) {
       fn();
     }
-  }, [count]);
+    /* 解决依赖函数的问题 */
+  }, [count, fn]);
 };
 useUpdate(() => {
   console.log(`变化成功了`);
 }, n);
+
+export default useUpdate;
