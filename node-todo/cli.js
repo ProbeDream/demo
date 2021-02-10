@@ -1,5 +1,5 @@
 const { program } = require('commander');
-const { add } = require('./index');
+const api = require('./index');
 program.version('0.0.1');
 
 program
@@ -12,8 +12,7 @@ program
   .description('add a task')
   .action((...args) => {
     const words = args.slice(0, -1).join(' ');
-    add();
-    console.log(words);
+    api.add(words);
   });
 program
   .command('clear')
