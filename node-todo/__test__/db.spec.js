@@ -1,4 +1,5 @@
 const db = require('../db');
+
 describe('db', () => {
   it('can red', () => {
     expect(db.read instanceof Function).toBe(true);
