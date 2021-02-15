@@ -19,3 +19,4 @@ webpack-demo-01/dist/
 temp/
 
 node-todo/node_modules/
+/.vscode/
